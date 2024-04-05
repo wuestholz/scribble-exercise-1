@@ -1,11 +1,11 @@
-pragma solidity >=0.8.4;
+pragma solidity >=0.8.18;
 
 contract AnnotatedVulnerableToken {
   uint256 private _totalSupply;
   mapping (address => uint256) private _balances;
   mapping (address => mapping (address => uint256)) private _allowances;
 
-  constructor() public {
+  constructor() {
     _totalSupply = 1000000;
     _balances[msg.sender] = 1000000;
   }

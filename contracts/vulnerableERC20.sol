@@ -1,11 +1,11 @@
-pragma solidity >=0.8.4;
+pragma solidity >=0.8.18;
 
 contract VulnerableToken {
   uint256 private _totalSupply;
   mapping (address => uint256) private _balances;
   mapping (address => mapping (address => uint256)) private _allowances;
 
-  constructor() public {
+  constructor() {
     _totalSupply = 1000000;
     _balances[msg.sender] = 1000000;
   }
@@ -25,7 +25,6 @@ contract VulnerableToken {
   function transfer(address _to, uint256 _value) external returns (bool) {
     address from = msg.sender;
     require(_value <= _balances[from]);
-
 
     uint256 newBalanceFrom = _balances[from] - _value;
     uint256 newBalanceTo = _balances[_to] + _value;

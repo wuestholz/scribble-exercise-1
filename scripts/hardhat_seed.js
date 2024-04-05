@@ -1,6 +1,5 @@
 const hre = require("hardhat");
 const { ethers } = require("hardhat");
-// const { ethers, artifacts } from 'hardhat';
 
 async function main() {
   await hre.run('compile');
